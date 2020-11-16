@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab06 - Part2</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
+    <script> 
+        function validate(string){  
+            var name = document.getElementById("name");
+            var phone = document.getElementById("phone");
+            var reg1 = /^[A-Za-z]+$/;  
+            var reg2 = /^\d{3}-\d{3}-\d{4}$/;
+            if (!reg1.test(name.value)){  
+                alert("Your input name is invalid! It should only contains letter.");  
+                return false;
+            }
+            if (!reg2.test(phone.value)){
+                alert("Your input phone number is invalid! It should be xxx-xxx-xxxx.");
+                return false;
+            }
+	    if (string == 'rb'){
+	    	document.form.target="_blank";
+	    	document.form.action="../cgi-bin/l6p2.rb";
+	    	document.form.submit();
+	    }
+	    else if (string == 'py'){
+	    	document.form.target="_blank";
+            	document.form.action="../cgi-bin/l6p2.cgi";
+            	document.form.submit();
+	    }
+        }
+    </script>
+</head>
+
+<body>
+    <h4>Lab06 - Part2</h4>
+    <form name="form" action="" method="post">
+        <p><label for="name">Name: </label><input type="text" name="name" id="name" required="required"></p>
+        <p><label for="address">Address: </label><input type="text" name="address" id="address" required="required"></p>
+        <p><label for="phone">Phone number: </label><input type="text" placeholder="xxx-xxx-xxxx" name="phone" id="phone" required="required"></p>
+        <input type="button" value="Submit Ruby" onClick="validate('rb')">
+	<input type="button" value="Submit Python" onClick="validate('py')">
+        <input type="reset" value="Reset">
+    </form>  
+</body>
+
+</html>
