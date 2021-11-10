@@ -27,8 +27,8 @@ response.write("<style> * {background-color: " & bgc & ";} p {text-align:center;
 </head>
 <body>
 <%
-response.write("<p>Student Name: Ruoling Yu</p>")
-response.write("<p>Student Number: 500976267</p>")
+response.write("<p>Student Name</p>")
+response.write("<p>Student Number</p>")
 %>
 </body>
 </html>
